@@ -1,0 +1,43 @@
+#Week 2 notes 
+Generics in Java explanation (hashmap and list)
+Container (set)that takes any other object and takes methods – created using e- for us to decide what it holds 
+What is hashmap( takes string and object)
+Methods associated with hashmaps- keyset, values, contains keyset, contains values, and others-check how this work and explore all others )
+For loup- hashmap, first parameter is the key, and second is value 
+
+Next video info
+toString overright method
+	object string representation of itself- command N- toString
+Deep copy vs shallow copy
+	Difference copy is copy by reference
+Deep copy each number gets a new instance so encapsulation is preserved 
+
+Next video info-Overrides methods inheritance 
+Any class can have a main- needed if you want to run code- 
+When comparing things be careful of doing == causes a bug to what is being compared object or location 
+Don’t use == to compare content 
+Equals method to auto generate to compare our object name and answer 
+equals boolean- 
+    instanceof- used to compare
+In java- printing- sometimes will get you memory address - or pointers 
+build in method toString- returns string we define
+@overright is an annotation 
+like @Test 
+telling interpreter that we are implementing our own version of an inherited method
+Inheritance refers to either extending a class or implementing an interface
+UML- Solid arrow- extension
+    dotted arrow- implementation
+Arrow points to the parent 
+Access Levels 
+    public
+    pretected- no world
+    no modifier- no to subclass and world
+    private - not to package, subclass, and world
+Inheritance is a method by which one class can access all the public or protected methods and fields of a parent object
+All objects can be grouped by their parent 
+Inheritance lets us re-use code in a meaningful way 
+== doesn't work with objects- object posses several methods that all objects inherit
+interpreter checking several things. Eventually it checks if it is in the same location
+@override a method to write our own definition of a method we are inheriting from a parent
+signature of a method is determined by the identifier and the parameter
+Equals- when override equals it is necessary to override hashcode as well 

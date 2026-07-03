@@ -1,0 +1,11 @@
+#Week 1 notes
+Commit commands in Git
+    git status
+    git add .
+    git branch
+    git checkout -b new branch name- creates new branch 
+    git commit -m "Add comment"
+    git
+
+
+    command+shift+K to push work to GitHub
