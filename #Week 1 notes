@@ -1,11 +1,11 @@
 #Week 1 notes
 Commit commands in Git
-    git status
-    git add .
-    git branch
-    git checkout -b new branch name- creates new branch 
-    git commit -m "Add comment"
-    git
+    git status- current state of working directory
+    git add .- updates all new modified or deleted files
+    git branch- gives a list of the local branches 
+    git checkout -b new branch name- creates new branch and switches to that branch 
+    git commit -m "Add comment" - Saves changes as a permanent snapshot in history 
+    git 
 
 
     command+shift+K to push work to GitHub

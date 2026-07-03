@@ -41,3 +41,450 @@ interpreter checking several things. Eventually it checks if it is in the same l
 @override a method to write our own definition of a method we are inheriting from a parent
 signature of a method is determined by the identifier and the parameter
 Equals- when override equals it is necessary to override hashcode as well 
+Static Variables
+Belong to the class, not individual objects.
+Shared by every object of the class.
+Declared using static.
+
+Example:
+
+private static int numOfCars;
+Remember:
+
+Instance variables → each object has its own copy.
+Static variables → one copy shared by all objects.
+Static Methods
+Belong to the class.
+Called using the class name.
+Math.sqrt(25);
+Temperature.toCelsius(32);
+Declare with:
+
+public static void methodName(){}
+Static vs Instance
+Static	Instance
+Belongs to class	Belongs to object
+Shared	Separate for every object
+No this	Can use this
+The this Keyword
+
+this refers to the current object.
+
+❌ Cannot be used inside static methods because no object exists.
+
+Common error:
+
+cannot be referenced from a static context
+Rules for Static Methods
+
+Static methods:
+
+✅ Access static variables
+✅ Call other static methods
+❌ Access instance variables
+❌ Call instance methods directly
+❌ Use this
+Static Constants
+
+Use:
+
+public static final
+
+Example:
+
+public static final int BIRTH_YEAR = 1982;
+final means value cannot change.
+Access with:
+MyClass.BIRTH_YEAR
+Math Class
+
+Useful static methods:
+
+Math.pow(x,y)
+Math.sqrt(x)
+Math.abs(x)
+Math.min(a,b)
+Math.max(a,b)
+Math.round(x)
+Math.ceil(x)
+Math.floor(x)
+Constants:
+
+Math.PI
+Math.E
+Wrapper Classes
+
+Primitive → Wrapper
+
+int → Integer
+double → Double
+char → Character
+boolean → Boolean
+
+Purpose:
+
+Treat primitive values like objects.
+Boxing
+
+Primitive → Object
+
+Integer num = Integer.valueOf(42);
+
+Automatic:
+
+Integer num = 42;
+Unboxing
+
+Object → Primitive
+
+int x = num.intValue();
+
+Automatic:
+
+int x = num;
+Wrapper Utilities
+
+Convert Strings:
+
+Integer.parseInt()
+Double.parseDouble()
+Float.parseFloat()
+
+Convert to String:
+
+Double.toString()
+
+Useful constants:
+
+Integer.MAX_VALUE
+Integer.MIN_VALUE
+var Keyword (Java 10+)
+
+Lets Java infer the type.
+
+var count = 10;
+
+Rules:
+
+Must initialize immediately.
+Only local variables.
+Cannot be fields.
+Static Methods in Interfaces
+
+(Java 8+)
+
+Interfaces can have static utility methods.
+
+Call with:
+
+InterfaceName.method();
+instanceof Pattern Matching
+
+Old:
+
+if(obj instanceof String){
+
+New:
+
+if(obj instanceof String s){
+
+Automatically casts the object.
+Inheritance
+
+Allows one class to reuse another class.
+
+class Book extends Product
+
+Terms:
+
+Parent (Superclass)
+Child (Subclass)
+
+Benefits:
+
+Code reuse
+Easier maintenance
+Less duplicate code
+extends
+
+Creates inheritance.
+
+public class Book extends Product
+
+Book is a Product.
+Constructors
+
+Constructors are NOT inherited.
+
+Use:
+
+super();
+
+Rules:
+
+Must be first statement.
+Calls parent constructor.
+this()
+
+Calls another constructor in the same class.
+
+this(name, price);
+super vs this
+
+super()
+
+Calls parent constructor.
+
+this()
+
+Calls another constructor in same class.
+
+Both cannot be used together unless this() is first.
+Access Modifiers
+public
+protected
+package-private
+private
+
+Protected allows subclasses to access members.
+Method Overriding
+
+Replace parent behavior.
+
+Requirements:
+
+Same method name
+Same parameters
+Same return type
+
+Use:
+
+@Override
+UML
+
+Inheritance arrow:
+
+Solid line
+Arrow points to parent class
+HashMap
+
+Stores key-value pairs.
+
+HashMap<String,Integer>
+
+Methods:
+
+put()
+get()
+remove()
+containsKey()
+size()
+keySet()
+
+Keys must be unique.
+Enhanced For Loop
+
+Instead of:
+
+for(int i=0;i<list.size();i++)
+
+Use:
+
+for(String name : list)
+
+Cleaner and easier.
+Polymorphism
+
+One reference, many object types.
+
+Example:
+
+Product p = new Book();
+
+A Product variable can store a Book.
+Dynamic Binding
+
+Java decides which overridden method to call at runtime.
+
+Example:
+
+p.toString();
+
+Calls Book's version if p is actually a Book.
+Casting
+
+Upcasting (safe)
+
+Product p = new Book();
+
+Downcasting
+
+Book b = (Book)p;
+
+Use:
+
+instanceof
+
+before downcasting.
+final
+
+Variable:
+
+Cannot change.
+
+Method:
+
+Cannot override.
+
+Class:
+
+Cannot extend.
+
+Examples:
+
+String
+Math
+Integer
+Object Class
+
+Every Java class extends Object.
+
+Important methods:
+
+toString()
+equals()
+hashCode()
+getClass()
+Abstract Classes
+
+Cannot create objects.
+
+abstract class Product
+
+Can contain:
+
+Regular methods
+Abstract methods
+Abstract Methods
+
+No implementation.
+
+public abstract void example();
+
+Subclasses must implement them.
+Override Methods & Memory (Quick Notes)
+
+Based on: Override Methods & Inheritance
+
+== vs .equals()
+
+==
+
+Compares memory locations (references).
+
+.equals()
+
+Compares object contents (if overridden).
+
+Never use:
+
+string1 == string2
+
+Use:
+
+string1.equals(string2)
+Object Equality
+
+Default equals() comes from Object.
+
+Without overriding:
+
+equals()
+
+behaves like
+
+==
+
+It checks if both variables point to the same object.
+
+Override equals()
+
+If you override:
+
+equals()
+
+You must also override
+
+hashCode()
+
+to maintain Java's contract.
+
+hashCode()
+
+Objects that are equal must have the same hash code.
+
+IDE can auto-generate:
+
+equals()
+hashCode()
+Printing Objects
+
+Printing an object calls:
+
+toString()
+
+Without overriding:
+
+ClassName@hashcode
+
+Not very useful.
+
+Override toString()
+
+Create readable output.
+
+Example:
+
+@Override
+public String toString(){
+    return name;
+}
+@Override
+
+Annotation that tells Java:
+
+"I'm replacing an inherited method."
+
+Benefits:
+
+Compiler checks correctness.
+Prevents mistakes.
+Inheritance
+
+Can happen by:
+
+extends
+implements
+
+UML:
+
+Solid arrow = extends
+Dotted arrow = implements
+Method Signature
+
+Includes:
+
+Method name
+Parameters
+
+Changing parameters changes the signature.
+
+Aliases
+
+Two variables can reference the same object.
+
+Example:
+
+object2 = object1;
+
+Changing one affects both.
