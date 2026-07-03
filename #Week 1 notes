@@ -9,3 +9,134 @@ Commit commands in Git
 
 
     command+shift+K to push work to GitHub
+
+Java Data Types 
+Primitive Types
+    byte
+    short
+    int
+    long
+    float
+    double
+    boolean
+    char
+Reference Types (Objects)
+    Byte
+    Short
+    Integer
+    Long
+    Float   
+    Double
+    Boolean
+    Character
+
+Key Difference
+Primitive types store actual values.
+Reference types store references to objects and can have methods and Data
+Java is Statically Typed
+Every variable must have a declared type.
+Type errors are caught during compilation.
+Methods
+A function is reusable code.
+A method is a function that belongs to an object.
+Methods are called using dot notation:
+object.methodName();
+Objects
+
+An object:
+
+Is an instance of a class.
+Contains data (fields) and methods.
+Maintains its own state.
+Encapsulation
+
+Definition:
+Encapsulation is the practice of:
+
+Bundling data and methods together.
+Restricting direct access to an object's data.
+Why is it important?
+Protects object data.
+Keeps objects in a valid state.
+Prevents outside code from making invalid changes.
+Trust and Access
+
+Objects should:
+
+Control their own data.
+Prevent outside code from directly changing important values.
+Access Modifiers
+Modifier	Accessible By
+public	Everyone
+protected	Same package + subclasses
+package-private (no modifier)	Same package only
+private	Same class only
+Safest Modifier
+private
+
+Use private unless another access level is necessary.
+Getters and Setters
+
+Used to control access to private fields.
+
+Getter
+
+Returns a value.
+
+public String getName() {
+    return name;
+}
+Setter
+
+Changes a value safely.
+
+public void setName(String name) {
+    this.name = name;
+}
+Benefits:
+
+Validation
+Data protection
+Better encapsulation
+UML (Unified Modeling Language)
+
+Used to design classes before coding.
+
+Symbols:
+
++ = public
+- = private
+# = protected
+~ = package-private
+
+A UML class diagram shows:
+
+Class name
+Attributes (variables)
+Methods
+Creating UML
+
+Possible tools:
+
+Draw.io
+IntelliJ IDEA Ultimate
+Whiteboard
+Pencil and paper
+Google Slides / PowerPoint
+Tablet
+Java Style Guidelines
+Class names begin with a capital letter.
+File names should match the class name.
+Always use braces {}.
+Put opening braces on the same line.
+Write comments.
+Javadoc
+
+Every method you write should have a Javadoc comment.
+
+Example:
+
+/**
+ * Returns a random action.
+ * @return A random action.
+ */
